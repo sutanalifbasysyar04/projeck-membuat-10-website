@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penerimaan Santri Baru - Darul Musthofa</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .brosur-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        /* HEADER SECTION */
+        .header {
+            background-color: #0b5e40;
+            color: white;
+            padding: 30px;
+            text-align: left;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .badge-gold {
+            background-color: #d6b36a;
+            color: white;
+            display: inline-block;
+            padding: 5px 15px;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+
+        .header .year {
+            font-size: 14px;
+        }
+
+        /* MAIN CONTENT - 2 COLUMNS */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23f9f9f9"/></svg>'); /* Placeholder background pattern */
+        }
+
+        .col {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .title-gold, .title-green {
+            text-align: center;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .title-gold {
+            background-color: #d6b36a;
+        }
+
+        .title-green {
+            background-color: #168c67;
+        }
+
+        .card ol, .card ul {
+            padding-left: 20px;
+            font-size: 14px;
+        }
+
+        .card li {
+            margin-bottom: 5px;
+        }
+
+        .waktu-tempat p {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        /* INTERACTIVE CONTACT LINKS */
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+        }
+
+        .contact-link {
+            display: block;
+            text-decoration: none;
+            background-color: #f0fdf4;
+            color: #0b5e40;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #c6f6d5;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background-color: #168c67;
+            color: white;
+            transform: scale(1.02);
+        }
+
+        /* FOOTER */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #168c67;
+            padding: 15px 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social {
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        
+        .social a:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        .btn-daftar {
+            background-color: #d6b36a;
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .btn-daftar:hover {
+            background-color: #bf9d55;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+        }
+        
+        .btn-daftar:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .footer {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="brosur-container">
+    <!-- Header -->
+    <header class="header">
+        <h1>
+            <!-- Icon Placeholder -->
+            <span style="font-size: 24px;">🕌</span> 
+            PONDOK PESANTREN DARUL MUSTHOFA<br>CILEGON-BANTEN
+        </h1>
+        <h2>PENERIMAAN<br>SANTRI BARU</h2>
+        <p class="subtitle">TINGKAT SMP SEDERAJAT</p>
+        <div class="badge-gold">MUKIM & NON MUKIM</div>
+        <p class="year">TAHUN PELAJARAN 2025 / 2026</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Kolom Kiri -->
+        <div class="col">
+            <div class="card">
+                <div class="title-gold">PERSYARATAN</div>
+                <ol>
+                    <li>Foto Copy Kartu Keluarga ( 2 Lbr )</li>
+                    <li>Foto Copy Akta Kelahiran ( 2 Lbr )</li>
+                    <li>Foto Copy KTP Orang Tua ( 2 Lbr )</li>
+                    <li>Pas Foto 3x4 ( 2 Lbr )</li>
+                    <li>Kartu Sosial ( KIP ) Jika Ada</li>
+                    <li>Foto Copy IJAZAH, SKHUN Sekolah dan NISN ( 2 Lbr )</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <div class="title-green">PROGRAM UNGGULAN</div>
+                <ol>
+                    <li>Tahfidz Juz 30 dan Surat-Surat Pilihan</li>
+                    <li>Mengaji Metode Tilawati</li>
+                    <li>Membaca Kitab Metode Al Miftah ( Sidogiri )</li>
+                </ol>
+            </div>
+
+            <div class="card waktu-tempat">
+                <div class="title-gold">WAKTU & TEMPAT PENDAFTARAN :</div>
+                <p><strong>01 Desember 2024 s.d 30 Juni 2025</strong></p>
+                <p>Jl. P. Jayakarta Link. Martapura RT. 01/RW. 03<br>
+                Kel. Masigit, Kec. Jombang, Kota Cilegon<br>
+                ( Pondok Pesantren Darul Musthofa )</p>
+            </div>
+        </div>
+
+        <!-- Kolom Kanan -->
+        <div class="col">
+            <div class="card">
+                <div class="title-green">EKSTRAKURIKULER</div>
+                <ol>
+                    <li>Pramuka</li>
+                    <li>Tapak Suci</li>
+                    <li>Futsal</li>
+                    <li>Hadroh</li>
+                    <li>Publik speaking</li>
+                    <li>Qori</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <div class="title-gold">KEGIATAN RUTIN</div>
+                <ol>
+                    <li>Mengaji</li>
+                    <li>Puasa Senin & Kamis</li>
+                    <li>Sholat Sunnah Dhuha</li>
+                    <li>Sholat Tahajud</li>
+                    <li>Muhadoroh</li>
+                    <li>Maulid Nabi</li>
+                    <li>Qasidah Burdah</li>
+                    <li>Hadrah Basaudan</li>
+                    <li>Dzikir Kitab Khulashah Al Madad</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <div class="title-green">CONTACT PERSON</div>
+                <ul class="contact-list">
+                    <!-- Link ini bisa dipencet dan akan otomatis membuka WhatsApp -->
+                    <li>
+                        <a href="https://wa.me/62895604230828" class="contact-link" target="_blank">
+                            📞 0895604230828 ( Hofifulloh )
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/6287780646699" class="contact-link" target="_blank">
+                            📞 087780646699 ( Huzaeni )
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/6287811223721" class="contact-link" target="_blank">
+                            📞 087811223721 ( Umar Dani )
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social">
+            FOLLOW USE : 
+            <a href="https://instagram.com/darulmusthofacilegon" target="_blank">@darulmusthofacilegon</a>
+        </div>
+        <!-- Tombol Daftar yang bisa dipencet dan diberi efek interaktif -->
+        <a href="https://wa.me/62895604230828?text=Halo,%20saya%20ingin%20mendaftar%20Santri%20Baru" class="btn-daftar" target="_blank">BURUAN DAFTAR !!!</a>
+    </footer>
+</div>
+
+</body>
+</html>
