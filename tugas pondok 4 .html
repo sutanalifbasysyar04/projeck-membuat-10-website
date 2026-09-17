@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brosur Yayasan Pondok Pesantren "UNIQ" Nusantara</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            padding: 20px;
+        }
+        .brochure-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fdfaf2;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        @media (max-width: 900px) {
+            .brochure-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .panel {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #e6dec5;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .panel-cover {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: white;
+            text-align: center;
+            align-items: center;
+        }
+        .logo-container {
+            width: 130px;
+            height: 130px;
+            background: radial-gradient(circle, #ffa500, #ff4500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 15px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 3px solid #ffcc00;
+        }
+        .logo-text {
+            font-size: 10px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            top: 5px;
+            text-shadow: 1px 1px 2px black;
+        }
+        .logo-book {
+            font-size: 35px;
+            background: #4a2c00;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: #ffcc00;
+            border: 1px solid #ffd700;
+        }
+        .logo-banner {
+            background: #0033cc;
+            color: white;
+            font-weight: bold;
+            padding: 5px 20px;
+            position: absolute;
+            bottom: -10px;
+            transform: rotate(-3deg);
+            border-radius: 4px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            border: 1px solid white;
+        }
+        h1 {
+            font-size: 22px;
+            color: #1b263b;
+            text-align: center;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 16px;
+            color: #b8860b;
+            border-bottom: 2px solid #b8860b;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+        p, li {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #444;
+        }
+        ul {
+            padding-left: 18px;
+            margin-bottom: 10px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .tagline {
+            font-style: italic;
+            text-align: center;
+            color: #d4af37;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .btn {
+            display: block;
+            background-color: #ff8c00;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 12px;
+            transition: background 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background-color: #e07b00;
+        }
+        .btn-blue {
+            background-color: #0033cc;
+        }
+        .btn-blue:hover {
+            background-color: #002399;
+        }
+        .contact-info {
+            background: #fff8dc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 12px;
+            border-left: 4px solid #ff8c00;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 120px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 12px;
+            margin-bottom: 10px;
+            border: 1px dashed #cbd5e1;
+        }
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            background: #fdfaf2;
+            padding: 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="brochure-container">
+
+    <!-- PANEL 1: KONTEN TENGAH / TENTANG KAMI (Halaman Depan Lipatan 1) -->
+    <div class="panel">
+        <div>
+            <div class="image-placeholder">🖼️ Foto Kegiatan Pondok / Suasana Belajar</div>
+            <h2>Tentang Kami</h2>
+            <p>Pondok Pesantren 'UNIQ' Nusantara adalah lembaga pendidikan Islam terpadu yang berkomitmen untuk mencetak generasi Qur'ani yang berakhlak mulia, cerdas, dan berjiwa wirausaha. Kami mengintegrasikan pendidikan agama Islam yang mendalam dengan kurikulum pendidikan nasional yang modern.</p>
+            
+            <h2>Program Pendidikan & Fasilitas</h2>
+            <p><strong>Tingkat Pendidikan:</strong></p>
+            <ul>
+                <li>Madrasah Tsanawiyah (MTs) UNIQ</li>
+                <li>Madrasah Aliyah (MA) UNIQ</li>
+                <li>Program Tahfidz Khusus</li>
+            </ul>
+
+            <p><strong>Fasilitas Unggulan:</strong></p>
+            <ul>
+                <li>Asrama Putra & Putri yang Nyaman</li>
+                <li>Ruang Kelas Modern Ber-AC</li>
+                <li>Masjid Jami' yang Luas</li>
+                <li>Laboratorium Komputer & IPA</li>
+                <li>Perpustakaan Lengkap</li>
+                <li>Kantin Sehat & Arena Olahraga</li>
+            </ul>
+        </div>
+        <div>
+            <a href="#pendaftaran" class="btn">Daftar Sekarang Secara Online</a>
+        </div>
+    </div>
+
+    <!-- PANEL 2: KURIKULUM & PENDAFTARAN (Halaman Tengah) -->
+    <div class="panel">
+        <div>
+            <h2>Kurikulum Unggulan</h2>
+            <div class="feature-grid">
+                <div class="feature-item">📖 <span><strong>Pendidikan Agama:</strong> Tahfidz, Fiqh, Hadits</span></div>
+                <div class="feature-item">💻 <span><strong>Pendidikan Modern:</strong> IPA, IPS, Bahasa</span></div>
+                <div class="feature-item">🌟 <span><strong>Karakter & Akhlak:</strong> Pembinaan Kepribadian</span></div>
+                <div class="feature-item">💼 <span><strong>Wirausaha & Kemandirian:</strong> Bekal Life Skill</span></div>
+            </div>
+
+            <h2>Persyaratan Pendaftaran</h2>
+            <ul>
+                <li>Mengisi Formulir Pendaftaran</li>
+                <li>Fotokopi Ijazah / SKL yang dilegalisir</li>
+                <li>Fotokopi Akta Kelahiran & Kartu Keluarga (KK)</li>
+                <li>Pas Foto Terbaru (3x4 dan 4x6)</li>
+                <li>Surat Keterangan Sehat dari Dokter</li>
+            </ul>
+
+            <h2 id="pendaftaran">Alur Pendaftaran</h2>
+            <p>1. Akses link pendaftaran online<br>
+               2. Isi formulir & upload berkas<br>
+               3. Konfirmasi pembayaran pendaftaran<br>
+               4. Ikuti seleksi/tes masuk</p>
+        </div>
+        <div>
+            <!-- Tombol Interaktif Bisa Dipencet -->
+            <a href="https://forms.gle/contohlinkpendaftaran" target="_blank" class="btn">🔗 Form Pendaftaran Online</a>
+            <a href="https://wa.me/621234567890" target="_blank" class="btn btn-blue">💬 Hubungi WhatsApp Admin</a>
+        </div>
+    </div>
+
+    <!-- PANEL 3: COVER UTAMA & KONTAK (Halaman Depan/Sampul) -->
+    <div class="panel panel-cover">
+        <div>
+            <div class="logo-container">
+                <div class="logo-text">YAYASAN PONDOK PESANTREN "UNIQ"</div>
+                <div class="logo-book">يس</div>
+                <div class="logo-banner">NUSANTARA</div>
+            </div>
+            
+            <h1>Yayasan Pondok Pesantren<br>"UNIQ" Nusantara</h1>
+            <p class="tagline">"Menyinari Hati dengan Ilmu dan Iman"</p>
+            
+            <div class="image-placeholder" style="background: rgba(255,255,255,0.1); color: #ddd; border-color: rgba(255,255,255,0.3); margin-top: 20px;">
+                🖼️ Foto Gedung Pesantren / Santri
+            </div>
+        </div>
+
+        <div class="contact-info" style="color: #333; text-align: left; width: 100%;">
+            <p><strong>📍 Alamat:</strong><br>Jl. Pesantren No. 1, Malang, Jawa Timur</p>
+            <p style="margin-top: 5px;"><strong>📞 Telepon / WhatsApp:</strong><br><a href="tel:+621234567890" style="color: #0033cc; text-decoration: none;">+62 123 4567 890</a></p>
+            <p style="margin-top: 5px;"><strong>📧 Email:</strong><br>info@uniqnusantara.sch.id</p>
+            <p style="margin-top: 5px;"><strong>🌐 Website:</strong><br><a href="https://uniqnusantara.sch.id" target="_blank" style="color: #0033cc;">www.uniqnusantara.sch.id</a></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

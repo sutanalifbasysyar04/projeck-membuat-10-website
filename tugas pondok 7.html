@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brosur Eksklusif Yayasan Pendidikan Islam Ibadurrahman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #0f172a;
+            color: #334155;
+            padding: 30px;
+        }
+        .brochure-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            background: #ffffff;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-radius: 16px;
+            border: 2px solid #d4af37;
+        }
+        @media (max-width: 950px) {
+            .brochure-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .panel {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+        .panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+        }
+        .panel-cover {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            color: #ffffff;
+            text-align: center;
+            align-items: center;
+            border: 1px solid #d4af37;
+        }
+        .logo-wrapper {
+            background: #ffffff;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px auto;
+            padding: 12px;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            border: 3px solid #d4af37;
+        }
+        .logo-img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #f8fafc;
+            text-align: center;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #9a7b0c;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+            margin-top: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        p, li {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #475569;
+        }
+        ul {
+            padding-left: 18px;
+            margin-bottom: 12px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .tagline {
+            font-style: italic;
+            text-align: center;
+            color: #d4af37;
+            margin: 12px 0;
+            font-weight: 500;
+            font-size: 14px;
+            font-family: 'Playfair Display', serif;
+        }
+        .btn {
+            display: block;
+            background: linear-gradient(135deg, #d4af37, #aa820a);
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #e5be3e, #b88a0b);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
+        }
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #34d399, #047857);
+        }
+        .contact-info {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 12px;
+            border-left: 4px solid #d4af37;
+            text-align: left;
+            width: 100%;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+        }
+        .contact-info p {
+            color: #1e293b;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 12px;
+            margin-bottom: 14px;
+            border: 1px dashed #cbd5e1;
+            font-weight: 500;
+        }
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            background: #fffbeb;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #fef3c7;
+            color: #78350f;
+        }
+    </style>
+</head>
+<body>
+
+<div class="brochure-container">
+
+    <!-- PANEL 1: TENTANG KAMI & PROGRAM -->
+    <div class="panel">
+        <div>
+            <div class="image-placeholder">🕌 Suasana Komplek & Aktivitas Belajar</div>
+            <h2>Tentang Kami</h2>
+            <p><strong>Yayasan Pendidikan Islam Ibadurrahman</strong> (عباد الرحمن) adalah lembaga pendidikan Islam unggulan yang memadukan kedalaman ilmu syar'i, pembentukan karakter Qur'ani (akhlakul karimah), serta penguasaan sains dan teknologi modern untuk melahirkan generasi pemimpin masa depan yang gemilang.</p>
+            
+            <h2>Jenjang Pendidikan</h2>
+            <ul>
+                <li><strong>RA / TK Islam</strong> (Pendidikan Usia Dini Berbasis Tauhid)</li>
+                <li><strong>SD / MI Islam Terpadu</strong> (Fondasi Akademik & Karakter)</li>
+                <li><strong>SMP / MTs Unggulan</strong> (Tahfidz & Sains)</li>
+                <li><strong>SMA / MA / Pesantren</strong> (Kemandirian & Kepemimpinan)</li>
+            </ul>
+
+            <h2>Fasilitas Eksekutif</h2>
+            <ul>
+                <li>Masjid Megah & Representatif</li>
+                <li>Asrama Santri Nyaman & Ber-AC</li>
+                <li>Ruang Kelas Full AC & Multimedia</li>
+                <li>Laboratorium Komputer & Sains Modern</li>
+                <li>Perpustakaan Digital & Buku Lengkap</li>
+            </ul>
+        </div>
+        <div>
+            <a href="#pendaftaran" class="btn">Daftar Online Sekarang</a>
+        </div>
+    </div>
+
+    <!-- PANEL 2: KURIKULUM & PERSYARATAN -->
+    <div class="panel">
+        <div>
+            <h2>Keunggulan & Kurikulum</h2>
+            <div class="feature-grid">
+                <div class="feature-item">📖 <span><strong>Tahfidz Al-Qur'an:</strong> Target hafalan mutqin bersyahadah.</span></div>
+                <div class="feature-item">💻 <span><strong>Kurikulum Terpadu:</strong> Kemenag, Diknas, & Kurikulum Internasional.</span></div>
+                <div class="feature-item">🤝 <span><strong>Leadership & Character:</strong> Pembinaan adab & kepemimpinan harian.</span></div>
+                <div class="feature-item">🗣️ <span><strong>Bahasa Arab & Inggris:</strong> Program *bilingual* aktif sehari-hari.</span></div>
+            </div>
+
+            <h2>Persyaratan Pendaftaran</h2>
+            <ul>
+                <li>Mengisi Formulir Pendaftaran Online/Offline</li>
+                <li>Fotokopi Ijazah / SKL / Rapor Terakhir (dilegalisir)</li>
+                <li>Fotokopi Akta Kelahiran & Kartu Keluarga (KK)</li>
+                <li>Pas Foto Berwarna ukuran 3x4 (4 lembar)</li>
+                <li>Lulus Tes Masuk (Akademik, Wawancara & Baca Al-Qur'an)</li>
+            </ul>
+
+            <h2 id="pendaftaran">Alur Pendaftaran</h2>
+            <p>1. Mengakses formulir pendaftaran digital<br>
+               2. Melakukan pembayaran administrasi tes<br>
+               3. Mengikuti seleksi (Wawancara & Tes Akademik)<br>
+               4. Pengumuman kelulusan & Daftar Ulang</p>
+        </div>
+        <div>
+            <!-- Tombol Interaktif Bisa Dipencet -->
+            <a href="https://forms.gle/ibadurrahman" target="_blank" class="btn">🔗 Link Formulir Pendaftaran</a>
+            <a href="https://wa.me/6281122334455" target="_blank" class="btn btn-whatsapp">💬 Chat WhatsApp Admin</a>
+        </div>
+    </div>
+
+    <!-- PANEL 3: COVER UTAMA & KONTAK -->
+    <div class="panel panel-cover">
+        <div>
+            <div class="logo-wrapper">
+                <img src="data:image/png;base64,..." alt="Logo Ibadurrahman" class="logo-img">
+            </div>
+            
+            <h1>Yayasan Pendidikan<br>Islam Ibadurrahman</h1>
+            <p class="tagline">"Mewujudkan Generasi Qur'ani, Cerdas, dan Berakhlak Mulia"</p>
+            
+            <div class="image-placeholder" style="background: rgba(255,255,255,0.05); color: #cbd5e1; border-color: rgba(212,175,55,0.4); margin-top: 15px;">
+                ✨ Gedung Utama & Kampus Ibadurrahman
+            </div>
+        </div>
+
+        <div class="contact-info" style="background: rgba(255,255,255,0.05); border-left-color: #d4af37; border-color: rgba(255,255,255,0.1);">
+            <p style="color: #f8fafc;"><strong>📍 Alamat Kantor Pusat:</strong><br><span style="color: #cbd5e1;">Jl. Ibadurrahman No. 99, Komplek Islamic Center, Indonesia</span></p>
+            <p style="margin-top: 8px; color: #f8fafc;"><strong>📞 Telepon / Hotline:</strong><br><a href="tel:+6281122334455" style="color: #d4af37; text-decoration: none; font-weight: 600;">+62 811-2233-4455</a></p>
+            <p style="margin-top: 8px; color: #f8fafc;"><strong>📧 Email Resmi:</strong><br><span style="color: #cbd5e1;">info@ibadurrahman.sch.id</span></p>
+            <p style="margin-top: 8px; color: #f8fafc;"><strong>🌐 Situs Web:</strong><br><a href="https://www.ibadurrahman.sch.id" target="_blank" style="color: #d4af37; font-weight: 600;">www.ibadurrahman.sch.id</a></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

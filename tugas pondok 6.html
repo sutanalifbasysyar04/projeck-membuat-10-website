@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brosur - Pondok Pesantren Al-Qur'an Al-Aziziyy Cileungsi - Bogor</title>
+    <!-- Google Fonts & FontAwesome untuk Ikon -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #e6ece8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .brochure-container {
+            width: 100%;
+            max-width: 480px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+            position: relative;
+            background-image: radial-gradient(#d4e2d8 0.75px, transparent 0.75px);
+            background-size: 15px 15px;
+        }
+
+        .header-section {
+            text-align: center;
+            padding: 30px 20px 15px 20px;
+            background: linear-gradient(to bottom, #f4f8f5, #ffffff);
+        }
+
+        .logo-img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .main-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111;
+            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-box {
+            padding: 0 25px;
+            margin-bottom: 20px;
+        }
+
+        /* Tentang Kami */
+        .about-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 5px;
+        }
+
+        .about-desc {
+            font-size: 12px;
+            color: #333;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        /* Program Unggulan */
+        .section-heading {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 12px;
+        }
+
+        .programs-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .program-card {
+            flex: 1;
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 12px 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .program-icon {
+            font-size: 26px;
+            color: #2e5a36;
+            margin-bottom: 8px;
+        }
+
+        .program-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .program-sub {
+            font-size: 9.5px;
+            color: #555;
+            line-height: 1.2;
+        }
+
+        /* Fasilitas */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .facility-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 90px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .facility-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .facility-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(18, 43, 26, 0.85);
+            color: #fff;
+            font-size: 10px;
+            text-align: center;
+            padding: 4px 0;
+            font-weight: 500;
+        }
+
+        /* Persyaratan & Testimoni Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 15px;
+            align-items: start;
+        }
+
+        .req-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .req-list li {
+            font-size: 11px;
+            color: #333;
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .req-list li::before {
+            content: "•";
+            color: #111;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .testimonial-box {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .quote-icon {
+            font-size: 18px;
+            color: #2e5a36;
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 9.5px;
+            color: #444;
+            font-style: italic;
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-author {
+            font-size: 9px;
+            font-weight: 600;
+            color: #2e5a36;
+            text-align: right;
+        }
+
+        /* Footer / Contact Us */
+        .footer-cta {
+            background: linear-gradient(to bottom, #d2e4d5, #b8d4bc);
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .cta-button-wrapper {
+            margin-bottom: 15px;
+        }
+
+        .btn-contact {
+            display: inline-block;
+            background-color: #1b3b22;
+            color: #ffffff;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-contact:hover {
+            background-color: #2e5a36;
+            transform: scale(1.05);
+        }
+
+        .footer-heading {
+            font-size: 15px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10.5px;
+            color: #222;
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .contact-col {
+            flex: 1;
+        }
+
+        .contact-col:last-child {
+            text-align: right;
+        }
+
+        .contact-col a {
+            color: #1b3b22;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-col a:hover {
+            text-decoration: underline;
+        }
+
+        .address-box {
+            font-size: 10.5px;
+            color: #222;
+            margin-top: 8px;
+            font-weight: 500;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="brochure-container">
+        
+        <!-- Header & Logo -->
+        <div class="header-section">
+            <!-- Gunakan URL gambar logo Anda atau ganti dengan nama file lokal -->
+            <img src="image_89e1ed.jpg" alt="Logo Al-Aziziyy" class="logo-img">
+            <h1 class="main-title">MENYONGSONG GENERASI QUR'ANI<br>YANG UNGGUL & BERAKHLAQ MULIA</h1>
+        </div>
+
+        <!-- Tentang Kami -->
+        <div class="section-box">
+            <h3 class="about-title">Tentang Kami</h3>
+            <p class="about-desc">
+                Didirikan dengan visi mencetak hafizh dan hafizhah Al-Quran yang berwawasan global dan berakhlak mulia. Berlokasi strategis di Cileungsi, Bogor.
+            </p>
+        </div>
+
+        <!-- Program Unggulan -->
+        <div class="section-box">
+            <h3 class="section-heading">Program Unggulan</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                    <div class="program-title">Tahfidz Al-Qur'an Intensif</div>
+                    <div class="program-sub">Intensive - target 30 juz</div>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon"><i class="fa-solid fa-mosque"></i></div>
+                    <div class="program-title">Pendidikan Diniyyah & Umum</div>
+                    <div class="program-sub">(Curriculum- integrated)</div>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <div class="program-title">Pembinaan Akhlak & Kepemimpinan</div>
+                    <div class="program-sub">(Character & Leadership Development)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fasilitas -->
+        <div class="section-box">
+            <h3 class="section-heading">Fasilitas</h3>
+            <div class="facilities-grid">
+                <div class="facility-item">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=300&q=80" alt="Gedung Kelas">
+                    <div class="facility-label">Gedung Representatif</div>
+                </div>
+                <div class="facility-item">
+                    <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=300&q=80" alt="Asrama">
+                    <div class="facility-label">Asrama Nyaman</div>
+                </div>
+                <div class="facility-item">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=300&q=80" alt="Masjid">
+                    <div class="facility-label">Masjid Modern</div>
+                </div>
+                <div class="facility-item">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" alt="Fasilitas Belajar">
+                    <div class="facility-label">Penunjang Lengkap</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Persyaratan & Testimoni -->
+        <div class="section-box">
+            <div class="info-grid">
+                <div>
+                    <h3 class="section-heading" style="margin-bottom: 8px;">Persyaratan Pendaftaran</h3>
+                    <ul class="req-list">
+                        <li>Lulusan SD/MI/SMP/MTs</li>
+                        <li>Fotocopy KK & Akte Kelahiran</li>
+                        <li>Foto terbaru</li>
+                        <li>Mengisi formulir</li>
+                        <li>Biaya administrasi</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-heading" style="margin-bottom: 8px;">Testimoni</h3>
+                    <div class="testimonial-box">
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">"Sangat berkesan & bersyukur bisa mondok di Al-Qur'an Al-Aziziyy. Alternatif terbaik Cibubur-Cileungsi, Bogor untuk pendidikan anak."</p>
+                        <div class="testimonial-author">- Wali Santri</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer / Contact Us (Bisa Dipencet) -->
+        <div class="footer-cta">
+            <div class="cta-button-wrapper">
+                <a href="https://wa.me/6281234567890" target="_blank" class="btn-contact">
+                    <i class="fa-brands fa-whatsapp"></i> DAFTAR SEKARANG!
+                </a>
+            </div>
+            
+            <h4 class="footer-heading">Contact Us</h4>
+            
+            <div class="contact-info">
+                <div class="contact-col">
+                    <strong>Call Us:</strong><br>
+                    <a href="tel:081234567890">0812-3456-7890</a><br>
+                    <a href="tel:081334567890">0813-3456-7890</a>
+                </div>
+                <div class="contact-col">
+                    <strong>Email & Web:</strong><br>
+                    <a href="mailto:info@alaziziyy.ponpes.id">info@alaziziyy.ponpes.id</a><br>
+                    <a href="https://www.alaziziyy.ponpes.id" target="_blank">www.alaziziyy.ponpes.id</a>
+                </div>
+            </div>
+
+            <div class="address-box">
+                <i class="fa-solid fa-location-dot"></i> Address: Jl. Raya Alternatif Cibubur - Cileungsi, Bogor
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
