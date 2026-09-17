@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Pesantren At-Taubah Cileungsi</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Playfair Display & Plus Jakarta Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #064e3b;       /* Emerald Dark */
+            --primary-light: #047857; /* Emerald Medium */
+            --gold: #d97706;          /* Deep Gold */
+            --gold-accent: #f59e0b;   /* Gold Highlight */
+            --gold-light: #fef3c7;    /* Warm Cream Gold */
+            --dark: #0f172a;          /* Slate Dark */
+            --light: #f8fafc;         /* Soft Background */
+            --white: #ffffff;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 30px -10px rgba(6, 78, 59, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* HEADER & NAVBAR */
+        header {
+            background: rgba(6, 78, 59, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.4rem;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .logo-text h1 {
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text p {
+            color: var(--gold-accent);
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.15);
+            border-bottom: 2px solid var(--gold-accent);
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold)) !important;
+            color: var(--white) !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(217, 119, 6, 0.4);
+        }
+
+        /* CONTAINER PAGE */
+        .page-section {
+            display: none;
+            min-height: 80vh;
+            padding-top: 100px;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(6, 78, 59, 0.88), rgba(15, 23, 42, 0.9)), 
+                        url('https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 2rem 80px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .badge-gold {
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid var(--gold-accent);
+            color: var(--gold-accent);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* SECTION COMMON STYLES */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .title-divider {
+            width: 70px;
+            height: 3px;
+            background: var(--gold);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* GRID CARDS */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold-accent);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold-light);
+            color: var(--gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* TIMELINE & STATS */
+        .stats-bar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin: 2rem 0 4rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: #d1fae5;
+        }
+
+        /* FORM SYTLING */
+        .form-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.15);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: #94a3b8;
+            padding: 4rem 2rem 2rem;
+            border-top: 4px solid var(--gold);
+        }
+
+        .footer-content {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 35px;
+            height: 2px;
+            background: var(--gold-accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-accent);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar { padding: 0.8rem 1rem; }
+            .nav-links {
+                display: none; /* Simplifikasi mobile view */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+            }
+            .nav-links.show { display: flex; }
+            .hero h2 { font-size: 2rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .mobile-menu-btn {
+                display: block;
+                color: var(--white);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-menu-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR HEADER -->
+    <header>
+        <div class="navbar">
+            <a href="#" onclick="showPage('home')" class="logo-container">
+                <div class="logo-icon"><i class="fa-solid => fa-kaaba"></i></div>
+                <div class="logo-text">
+                    <h1>AT-TAUBAH</h1>
+                    <p>Cileungsi Bogor</p>
+                </div>
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a onclick="showPage('home')" class="nav-item active" id="nav-home">Beranda</a></li>
+                <li><a onclick="showPage('profil')" class="nav-item" id="nav-profil">Profil</a></li>
+                <li><a onclick="showPage('program')" class="nav-item" id="nav-program">Program</a></li>
+                <li><a onclick="showPage('fasilitas')" class="nav-item" id="nav-fasilitas">Fasilitas</a></li>
+                <li><a onclick="showPage('kontak')" class="nav-item" id="nav-kontak">Kontak</a></li>
+                <li><a onclick="showPage('psb')" class="nav-item btn-nav" id="nav-psb">PPDB Online</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main>
+
+        <!-- 1. HALAMAN BERANDA (HOME) -->
+        <section id="home" class="page-section active" style="padding-top: 60px;">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="badge-gold"><i class="fa-solid fa-star"></i> Melek IT & Berilmu Syar'i</span>
+                    <h2>Mencetak Generasi Hafiz Qur'an, Berakhlak & Adaptif Teknologi</h2>
+                    <p>Pondok Pesantren At-Taubah Cileungsi hadir membentuk santri mandiri yang unggul dalam Bahasa Arab, ilmu Qur’an, dan berdaya saing di era digital berbasis syariah.</p>
+                    <div class="hero-buttons">
+                        <button onclick="showPage('psb')" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Daftar Santri Baru</button>
+                        <button onclick="showPage('profil')" class="btn btn-secondary"><i class="fa-solid fa-circle-info"></i> Jelajahi Profil</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Kurikulum Terpadu</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>30</h3>
+                        <p>Juz Target Tahfizh</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>IT & Syariah</h3>
+                        <p>Kurikulum Unggulan</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24 Jam</h3>
+                        <p>Pengawasan & Pembinaan</p>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2>Keunggulan Pesantren</h2>
+                    <p>Mengapa Pondok Pesantren At-Taubah Cileungsi menjadi pilihan tepat untuk putra-putri Anda?</p>
+                    <div class="title-divider"></div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-book-quran"></i></div>
+                        <h3>Tahfizh & Talaqqi</h3>
+                        <p>Program pendalaman Al-Qur'an dengan sanad terhubung dan tajwid yang presisi di bawah bimbingan para huffazh berpengalaman.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>Melek IT & Digital</h3>
+                        <p>Santri dibekali keterampilan teknologi informasi modern agar siap menghadapi era digital berbasis syariah yang positif.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-language"></i></div>
+                        <h3>Bahasa Arab & Kitab</h3>
+                        <p>Penguasaan Bahasa Arab aktif harian serta kajian rutin kitab-kitab klasik (Kitab Kuning) untuk memahami agama dari sumbernya.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. HALAMAN PROFIL -->
+        <section id="profil" class="page-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Profil Pesantren</h2>
+                    <p>Mengenal lebih dekat sejarah, visi, dan misi Pondok Pesantren At-Taubah Cileungsi</p>
+                    <div class="title-divider"></div>
+                </div>
+
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3><i class="fa-solid fa-building-columns" style="color: var(--gold);"></i> Sejarah Singkat</h3>
+                    <p style="margin-top: 1rem;">Pondok Pesantren At-Taubah yang berlokasi di Kecamatan Cileungsi, Kabupaten Bogor, didirikan sebagai wadah pendidikan Islam terpadu. Berada di bawah naungan yayasan yang fokus pada dakwah dan pendidikan, At-Taubah terus berkomitmen mencetak generasi mulia yang kokoh secara akidah, fasih berbahasa Arab, serta adaptif terhadap kemajuan zaman.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card" style="border-top: 4px solid var(--primary);">
+                        <h3><i class="fa-solid fa-eye" style="color: var(--primary);"></i> Visi Kami</h3>
+                        <p style="margin-top: 1rem;">"Menjadi lembaga pendidikan Islam terdepan dalam melahirkan generasi Hafiz Qur'an yang berakhlakul karimah, berilmu syar'i, dan menguasai teknologi."</p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--gold);">
+                        <h3><i class="fa-solid fa-bullseye" style="color: var(--gold);"></i> Misi Utama</h3>
+                        <ul style="margin-top: 1rem; padding-left: 1.2rem; color: #475569;">
+                            <li>Menyelenggarakan program Tahfizh Al-Qur'an intensif.</li>
+                            <li>Mengajarkan ilmu-ilmu syari'ah dan Bahasa Arab secara terstruktur.</li>
+                            <li>Membekali santri keterampilan IT & bela diri untuk ketahanan fisik dan mental.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HALAMAN PROGRAM PENDIDIKAN -->
+        <section id="program" class="page-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Program Pendidikan</h2>
+                    <p>Kurikulum komprehensif yang dirancang untuk keseimbangan akademik dan spiritual santri</p>
+                    <div class="title-divider"></div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3>Tahfizh & Dirasah Islamiyah</h3>
+                        <p>Program unggulan berdurasi penuh dengan fokus hafalan Al-Qur'an, Fiqih, Aqidah, Hadits, dan Bahasa Arab dasar hingga mahir.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>Pelatihan Komputer & IT</h3>
+                        <p>Program literasi digital yang meliputi dasar pemrograman, pengelolaan media dakwah digital, dan etika berteknologi.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Ekstrakurikuler & Bela Diri</h3>
+                        <p>Mengasah ketangkasan fisik santri melalui program olahraga sunnah, latihan bela diri, seni kaligrafi Islam, dan public speaking (Muhadharah).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. HALAMAN FASILITAS -->
+        <section id="fasilitas" class="page-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Fasilitas Pesantren</h2>
+                    <p>Sarana dan prasarana yang mendukung kenyamanan belajar dan beribadah para santri</p>
+                    <div class="title-divider"></div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-mosque"></i></div>
+                        <h3>Masjid Utama</h3>
+                        <p>Pusat kegiatan ibadah, shalat berjamaah 5 waktu, kajian umum, dan halaqah hafalan Qur'an yang nyaman dan bersih.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-bed"></i></div>
+                        <h3>Asrama Santri</h3>
+                        <p>Gedung asrama yang tertata rapi, representatif, serta berada dalam pengawasan 24 jam oleh ustadz pembina.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-desktop"></i></div>
+                        <h3>Laboratorium Komputer</h3>
+                        <p>Ruang laboratorium komputer yang dilengkapi perangkat modern untuk pembelajaran teknologi informasi para santri.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-book"></i></div>
+                        <h3>Perpustakaan Islam</h3>
+                        <p>Koleksi kitab-kitab rujukan klasik, buku pengetahuan umum, dan literatur syariah pendukung studi santri.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-volleyball"></i></div>
+                        <h3>Lapangan Olahraga</h3>
+                        <p>Fasilitas area olahraga terpadu untuk kegiatan panahan, futsal, dan aktivitas fisik rutin santri.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-utensils"></i></div>
+                        <h3>Kantin & Dapur Bersih</h3>
+                        <p>Penyediaan konsumsi makanan sehat, bergizi, dan halal secara rutin untuk menunjang aktivitas belajar harian.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. HALAMAN PPDB ONLINE -->
+        <section id="psb" class="page-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Pendaftaran Santri Baru (PPDB)</h2>
+                    <p>Isi formulir online di bawah ini untuk mendaftarkan putra/putri Anda di At-Taubah Cileungsi</p>
+                    <div class="title-divider"></div>
+                </div>
+
+                <div class="form-container">
+                    <form id="ppdbForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nama_lengkap"><i class="fa-solid fa-user"></i> Nama Lengkap Santri</label>
+                                <input type="text" id="nama_lengkap" class="form-control" placeholder="Contoh: Ahmad Abdullah" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nisn"><i class="fa-solid fa-id-card"></i> NISN / NIK</label>
+                                <input type="number" id="nisn" class="form-control" placeholder="10 Digit NISN / NIK" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tempat_lahir"><i class="fa-solid fa-location-dot"></i> Tempat Lahir</label>
+                                <input type="text" id="tempat_lahir" class="form-control" placeholder="Kota / Kabupaten" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tanggal_lahir"><i class="fa-solid fa-calendar"></i> Tanggal Lahir</label>
+                                <input type="date" id="tanggal_lahir" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nama_ortu"><i class="fa-solid fa-users"></i> Nama Orang Tua / Wali</label>
+                                <input type="text" id="nama_ortu" class="form-control" placeholder="Nama Ayah / Ibu" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp"><i class="fa-brands fa-whatsapp"></i> No. WhatsApp Aktif</label>
+                                <input type="tel" id="whatsapp" class="form-control" placeholder="08xxxxxxxxxx" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="program_pilihan"><i class="fa-solid fa-bookmark"></i> Program yang Dipilih</label>
+                            <select id="program_pilihan" class="form-control" required>
+                                <option value="">-- Pilih Program --</option>
+                                <option value="Tahfizh & Bahasa Arab (Mukim)">Tahfizh & Bahasa Arab (Mukim/Asrama)</option>
+                                <option value="Tahfizh & IT Syariah">Tahfizh & IT Syariah (Mukim)</option>
+                                <option value="Non-Mukim / Reguler">Program Non-Mukim / Reguler</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="alamat"><i class="fa-solid fa-house"></i> Alamat Lengkap</label>
+                            <textarea id="alamat" class="form-control" rows="3" placeholder="Jalan, RT/RW, Desa, Kecamatan, Kabupaten" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1rem; padding: 14px;">
+                            <i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. HALAMAN KONTAK -->
+        <section id="kontak" class="page-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Hubungi & Kunjungi Kami</h2>
+                    <p>Informasi alamat dan saluran komunikasi resmi Pondok Pesantren At-Taubah Cileungsi</p>
+                    <div class="title-divider"></div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h3>Lokasi Pesantren</h3>
+                        <p>Kecamatan Cileungsi, Kabupaten Bogor, Jawa Barat, Indonesia.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-phone"></i></div>
+                        <h3>Telepon / WhatsApp</h3>
+                        <p>Admin Sekretariat:<br><strong>+62 812-3456-7890</strong></p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <h3>Email Resmi</h3>
+                        <p>info@attaubah-cileungsi.sch.id<br>ponpesattaubah.cileungsi@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>At-Taubah Cileungsi</h4>
+                <p>Lembaga Pendidikan Pesantren Islam Terpadu yang berfokus pada pembentukan hafiz Qur'an, penguasaan bahasa Arab, dan pemanfaatan teknologi informasi syariah.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi Cepat</h4>
+                <ul class="footer-links">
+                    <li><a onclick="showPage('home')">Beranda</a></li>
+                    <li><a onclick="showPage('profil')">Profil Pesantren</a></li>
+                    <li><a onclick="showPage('program')">Program Pendidikan</a></li>
+                    <li><a onclick="showPage('psb')">PPDB Online</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Media Sosial</h4>
+                <p>Ikuti perkembangan kegiatan santri kami melalui saluran resmi:</p>
+                <div style="display: flex; gap: 15px; margin-top: 1rem; font-size: 1.3rem;">
+                    <a href="#" style="color: var(--gold-accent);"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" style="color: var(--gold-accent);"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" style="color: var(--gold-accent);"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" style="color: var(--gold-accent);"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pondok Pesantren At-Taubah Cileungsi Bogor. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT UNTUK NAVIGASI APLIKASI HALAMAN TUNGGAL (SPA) -->
+    <script>
+        // Fungsi untuk mengontrol perpindahan halaman secara interaktif
+        function showPage(pageId) {
+            // Sembunyikan semua halaman
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Tampilkan halaman yang dipilih
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            // Perbarui class active pada menu navigasi
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+
+            // Gulung otomatis ke paling atas halaman
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Tutup menu mobile jika sedang terbuka
+            document.getElementById('navLinks').classList.remove('show');
+        }
+
+        // Toggle Menu Navigasi di Tampilan Mobile
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+
+        // Fungsi Penanganan Form Pendaftaran (Integrasi Otomatis ke WhatsApp Admin)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            // Ambil nilai dari inputan form
+            const nama = document.getElementById('nama_lengkap').value;
+            const nisn = document.getElementById('nisn').value;
+            const ttl = document.getElementById('tempat_lahir').value + ', ' + document.getElementById('tanggal_lahir').value;
+            const ortu = document.getElementById('nama_ortu').value;
+            const wa = document.getElementById('whatsapp').value;
+            const program = document.getElementById('program_pilihan').value;
+            const alamat = document.getElementById('alamat').value;
+
+            // Format Pesan WhatsApp
+            const message = `*PENDAFTARAN SANTRI BARU - AT-TAUBAH CILEUNGSI*%0A%0A` +
+                `• *Nama Lengkap:* ${nama}%0A` +
+                `• *NISN/NIK:* ${nisn}%0A` +
+                `• *TTL:* ${ttl}%0A` +
+                `• *Nama Ortu/Wali:* ${ortu}%0A` +
+                `• *No. WA:* ${wa}%0A` +
+                `• *Program Pilihan:* ${program}%0A` +
+                `• *Alamat:* ${alamat}%0A%0A` +
+                `Mohon informasi mengenai alur dan proses seleksi selanjutnya. Terima kasih.`;
+
+            // Nomor HP Admin Pesantren (Ganti angka ini sesuai nomor asli Anda)
+            const adminPhone = "6281234567890";
+
+            // Buka WhatsApp Otomatis
+            window.open(`https://wa.me/${adminPhone}?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
